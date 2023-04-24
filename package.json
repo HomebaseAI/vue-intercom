@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "main": "./build/plugin.js",
-  "types": "./build/plugin.d.ts",
+  "typings": "./build/plugin.d.ts",
   "repository": {
     "url": "https://github.com/dylhack/vue-intercom.git",
     "type": "HTTPS"
