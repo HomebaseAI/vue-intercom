@@ -1,0 +1,24 @@
+{
+  "name": "@homebaseai/vue2-intercom",
+  "version": "2.0.0",
+  "description": "An Intercom plugin for Vue.js 2",
+  "license": "MIT",
+  "main": "./build/plugin.mjs",
+  "typings": "./build/typings/plugin.d.ts",
+  "author": "HomebaseAI <https://github.com/HomebaseAI>",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HomebaseAI/vue-intercom.git"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "vue": "^2.7.5",
+    "vue-intercom-types": "file:../shared"
+  },
+  "devDependencies": {
+    "rollup": "^3.21.0"
+  }
+}

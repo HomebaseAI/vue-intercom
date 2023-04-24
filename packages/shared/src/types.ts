@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    Intercom: Intercom;
+  }
+}
+
 export type IntercomEvents = {
   onHide: undefined;
   onShow: undefined;
@@ -5,9 +11,7 @@ export type IntercomEvents = {
   onUnreadCountChange: number;
 };
 
-export type CallIntercom = (name: string, ...args: any[]) => void;
-
-export type Intercom = CallIntercom & {
+export type Intercom = (...args: any[]) => any & {
   q: any[];
   c: (args: any[]) => void;
 };
@@ -18,6 +22,8 @@ export type BootOptions = {
   created_at: number;
   name: string;
   user_id: string;
+  hide_default_launcher: boolean;
+  custom_launcher_selector: string;
 }
 
 export type UpdateOptions = {
