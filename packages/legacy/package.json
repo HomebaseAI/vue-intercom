@@ -1,8 +1,9 @@
 {
   "name": "@homebaseai/vue2-intercom",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "An Intercom plugin for Vue.js 2",
   "license": "MIT",
+  "keywords": ["vue", "vue2", "vuejs", "vuejs2", "js", "intercom"],
   "main": "./build/plugin.mjs",
   "typings": "./build/typings/plugin.d.ts",
   "author": "HomebaseAI <https://github.com/HomebaseAI>",

@@ -79,9 +79,8 @@ export default {
 
 ## Vue 2
 
-
 ```sh
-npm install @homebaseai/vue2-intercom
+npm i @homebaseai/vue2-intercom
 ```
 
 ### Usage

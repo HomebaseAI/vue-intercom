@@ -1,10 +1,11 @@
 {
   "name": "@homebaseai/vue3-intercom",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "An Intercom plugin for Vue.js 3",
   "license": "GPL-3.0",
   "main": "./build/plugin.mjs",
   "typings": "./build/typings/plugin.d.ts",
+  "keywords": ["vue", "vue3", "vuejs", "vuejs3", "js", "intercom"],
   "type": "module",
   "repository": {
     "type": "git",
@@ -12,7 +13,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "prepack": "npm run build"
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "@homebaseai/intercom-api": "^1.0.2",

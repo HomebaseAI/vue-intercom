@@ -1,7 +1,7 @@
 ## vue2-intercom
 
 ```sh
-npm install @homebaseai/vue2-intercom
+npm i @homebaseai/vue2-intercom
 ```
 
 ### Usage

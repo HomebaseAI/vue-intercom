@@ -5,11 +5,7 @@ export default [
       {
         format: 'esm',
         file: 'build/plugin.mjs',
-      },
-      {
-        format: 'cjs',
-        file: 'build/plugin.cjs',
-      },
+      }
     ],
     plugins: [],
   },
