@@ -1,116 +1,74 @@
-# ⚠️ NOTICE: No Longer Maintained.
+## vue3-intercom
 
-# vue-intercom
-
-A reactive wrapper for [Intercom's](https://www.intercom.com/) [JavaScript API](https://developers.intercom.com/docs/intercom-javascript)
-
-## Installation
-
-```bash
-npm install --save vue-intercom
+```sh
+npm i @homebaseai/vue3-intercom
 ```
 
-```javascript
-import Vue from 'vue';
-import VueIntercom from 'vue-intercom';
+### Usage
 
-Vue.use(VueIntercom, { appId: 'your-app-id' });
+Apply the plugin via [`app.use`](https://vuejs.org/api/application.html#app-use).
+
+```ts
+import { createApp } from 'vue'
+import VueIntercom from '@homebaseai/vue3-intercom';
+import App from '@/App.vue';
+
+const app = createApp(App);
+app.use(VueIntercom);
+app.mount('#app');
 ```
 
-## Usage
+#### Composition API
 
-`vue-intercom` handles the injection of Intercom's script into your html and wraps calls to the Intercom API with methods and exposes them through the `$intercom` object in your components.
+```vue
+<script setup lang="ts">
+import { useIntercom } from '@homebaseai/vue3-intercom';
 
-```javascript
-new Vue({
-  el: '#app',
+const intercom = useIntercom();
+
+// init intercom
+intercom.boot({
+  app_id: import.meta.env.VITE_APP_INTERCOM_TOKEN,
+  user_id: 1,
+  name: 'John Doe',
+  email: 'john@exampl.com',
+});
+
+// display it
+intercom.show();
+</script>
+```
+
+#### Options API
+
+```vue
+<script lang="ts">
+import { useIntercom } from '@homebaseai/vue3-intercom';
+
+export default {
+  setup() {
+    return {
+      intercom: useIntercom(),
+    }
+  },
   data() {
     return {
       userId: 1,
-      name: 'Foo Bar',
-      email: 'foo@bar.com',
-    };
+      name: 'John Doe',
+      email: 'john@example.com',
+    }
   },
   mounted() {
-    this.$intercom.boot({
+    // init intercom
+    intercom.boot({
+      app_id: import.meta.env.VITE_APP_INTERCOM_TOKEN,
       user_id: this.userId,
       name: this.name,
       email: this.email,
     });
-    this.$intercom.show();
-  },
-  watch: {
-    email(email) {
-      this.$intercom.update({ email });
-    },
+
+    // display it
+    intercom.show();
   }
-});
+}
 ```
-
-## Example App
-
-```
-cd example
-yarn
-yarn dev
-```
-
-## API
-
-### Values
-
-#### `$intercom.ready`
-
-Set to `true` once the Intercom script has been loaded.
-
-#### `$intercom.visible`
-
-Set via the `onShow`/`onHide` events.
-
-#### `$intercom.unreadCount`
-
-Set via the `onUnreadCountChange` event.
-
-### Methods
-
-#### `$intercom.boot(/* optional */options)`
-
-Calls `Intercom('boot')`. Automatically sets the `app_id` unless specified in the options object.
-
-#### `$intercom.shutdown()`
-
-Calls `Intercom('shutdown')`.
-
-#### `$intercom.update(/* optional */options)`
-
-Calls `Intercom('update')`. If the options object is set, calls `Intercom('update', options)`
-
-#### `$intercom.show()`
-
-Calls `Intercom('show')`.
-
-#### `$intercom.hide()`
-
-Calls `Intercom('hide')`.
-
-#### `$intercom.showMessages()`
-
-Calls `Intercom('showMessages')`.
-
-#### `$intercom.showNewMessage(/* optional */content)`
-
-Calls `Intercom('showNewMessage')` with pre-populated content if provided.
-
-#### `$intercom.trackEvent(name, /* optional */metadata)`
-
-Calls `Intercom('trackEvent')` with extra metadata if provided.
-
-#### `$intercom.getVisitorId()`
-
-Calls `Intercom('getVisitorId')`.
-
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
-
-Copyright (c) 2017 Continuon
