@@ -1,6 +1,6 @@
 {
   "name": "@homebaseai/vue3-intercom",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "An Intercom plugin for Vue.js 3",
   "license": "GPL-3.0",
   "main": "./build/plugin.mjs",
@@ -15,7 +15,7 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "@homebaseai/intercom-api": "^1.0.0",
+    "@homebaseai/intercom-api": "^1.0.2",
     "mitt": "^3.0.0",
     "tslib": "^2.5.0",
     "vue": "^3.2.47"

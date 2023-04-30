@@ -1,6 +1,6 @@
 /* globals window, document */
 import { callIf, assert, mapInstanceToProps } from './util'
-import * as internal from 'vue-intercom-types';
+import * as internal from '@homebaseai/intercom-api';
 
 let Vue
 const init = ({ appId }) => {

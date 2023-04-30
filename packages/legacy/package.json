@@ -1,6 +1,6 @@
 {
   "name": "@homebaseai/vue2-intercom",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "description": "An Intercom plugin for Vue.js 2",
   "license": "MIT",
   "main": "./build/plugin.mjs",
@@ -15,8 +15,8 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "vue": "^2.7.5",
-    "vue-intercom-types": "file:../shared"
+    "@homebaseai/intercom-api": "^1.0.2",
+    "vue": "^2.7.5"
   },
   "devDependencies": {
     "rollup": "^3.21.0"
